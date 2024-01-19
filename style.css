@@ -112,7 +112,7 @@ i{
 
  .container{
     max-width: 1651px;
-    min-width: 880px;
+    min-width: 1050px;
     margin: 0 auto;
  }
 
@@ -323,7 +323,7 @@ img{
 }
 
 .calculator{
-    width: 1.6em;
+    width: 2em;
 }
  
 
@@ -359,28 +359,403 @@ img{
 
 
 /* body page */
-.body-page .dashboard{
-    border: 1px solid red;
+
+.dashboard .header{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 12em;
+    padding: 1em;
+    margin-bottom: 3em;
+}
+
+input[type="submit"]{
+    padding: .5em 0;
+    width: 100px;
+    outline: 0;
+    border: none;
+    border-radius: 2px;
+    margin: 0 1em;
+    font-family: inherit;
+    font-size: small;
+    font-family: var(--fw6);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.header .btns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .2em;
+}
+
+input.create_btn{
+    background-color:#3c51b0aa;
+    color: var(--white-color);
+
+}
+
+input.create_btn:hover{
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+input.save_btn{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+input.save_btn:hover{
+    background-color: var(--dark-color);
+    color: var(--primary-color);
+}
+
+input.search_btn{
+    background-color:#020d41ee;
+    color: var(--white-color);
+    border: 1px solid var(--primary-color);
+    gap: 1em;
+}
+
+input.search_btn:hover{
+    background-color: var(--white-color);
+    color: var(--dark-color);
+}
+
+
+input[type="search"]{
+    width: 350px;
+    padding: .6em 3em .6em 1.5em;
+    border-radius: 5px;
+    border: none;
+    outline: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+input[type="search"]::placeholder{
+    opacity: .5;
+}
+
+.header .srch{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.srch .search_box{
+    position: relative;
+
+}
+
+.srch .search_icon{
+    position: absolute;
+    right: .3em;
+    top: .1em;
+    width: 10%;
+    height: 90%;
+    opacity: .4;
+}
+
+.user_hr{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1em;
+    background-color: var(--primary-color);
+    position: relative;
+    padding: .5em 0;
+}
+
+.user_hr .user_profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1em;
+}
+
+.user_hr .user_image{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -2em;
+    left: .7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_hr .user_image img{
+    width: var(--percent100);
+    height: var(--percent100);
+
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+
+}
+
+.user_hr .user_name{
+    margin-left: 6em;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: var(--fw6);
+    cursor: pointer;
+    
+}
+
+.user_hr .notification_icon{
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.user_hr .notification_icon img{
+    width: 1.4em;
+    height: 1.4em;
+    cursor: pointer;
+    
+}
+
+.user_hr .user_swith{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 1em;
+    gap: .5em;
+}
+
+.user_hr .user_swith .user_icon img{
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    
+}
+
+
+.user_hr .user_swith .sales{
+    font-weight: var(--fw5);
+}
+
+.dashboard .list_row {
+    background-color: #19074c;
+    color: var(--white-color);
+    margin: 0em 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard .list_row .view_icon {
+    margin-left: 7em;
+    width: 50%;
+}
+
+.dashboard .list_row .view_icon img {
+    width: 1.2em;
+    height: 1.2em;
+    opacity: 0.4;
+}
+
+.dashboard .list_row .view_icon img:hover{
+    opacity: 1;
+}
+
+.dashboard .list_row div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3em 0;
+    margin: 0.3em 0;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: border .5s; 
+    cursor: pointer;
+}
+.dashboard .list_row label{
+    cursor: pointer;
+}
+
+.dashboard .list_row div:hover:not(:first-child) {
+    border: 1px solid var(--light-text-color);
+    border-radius: 5px;
+    background-color: #33246ecb;
+}
+
+.dashboard .leads_object{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 1em;
+    background-color: #4b5f82;
+}
+
+
+.leads_object .control{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.2em;
+    margin: 0 1em;
+}
+
+.leads_object .control .title{
+    font-size: 17px;
+    color: var(--white-color);
+    font-weight: var(--fw5);
+    text-transform: uppercase;
+}
+
+
+.leads_object .control :where(.equ, .view_icon){
+    width: 30px;
+    height: 20px;
+}
+
+.leads_object .control img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: .5s;
+    
+}
+
+.leads_object .control img:hover{
+    opacity: .5;
+}
+
+.dashboard .leads_object .filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2em;
+    color: var(--white-color);
+    text-transform: uppercase;
+    margin: .5em 0;
+}
+
+.leads_object :where(.initial_date, .final_date){
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .3em;
+}
+
+.leads_object :where(.initial_date, .final_date) input{
+    width: 25px;
+    height: 28px;
+    border-radius: 4px;
+    outline: 0;
+    border: none;
+    padding: 0 .8em;
+    font-size: small;
+    font-family: inherit;
+
+}
+
+.leads_object :where(.initial_date, .final_date) .year{
+    width: 35px;
+}
+
+.dashboard .leads_object .filter .srch{
+    margin:  0 1em;
+}
+
+.dashboard .leads_object .filter .srch .search_box{
+    position: relative;
+}
+
+.dashboard .leads_object .filter .srch .search_box input{
+    background-color: transparent;
+    border: 1px groove var(--light-bg-color);
+    color: var(--white-color);
+    width: 225px;
+}
+
+.dashboard .leads_object .filter .srch .search_box input::placeholder{
+    opacity: .8;
+}
+
+
+.dashboard .leads_object .filter .srch .search_box img{
+ position: absolute;
+ width: 10%;
+ height: auto;
+ right: .5em;
+ z-index: 1;
+ top: .5em;
+ opacity: .5;
+
+}
+
+.dashboard .leads_object .filter .srch .advanced{
+    text-align: right;
+    text-transform: capitalize;
+    color: var(--primary-color);
+}
+
+.dashboard .leads_object .filter .srch .advanced label{
+    cursor: pointer;
+}
+
+
+/* table  */
+
+.dashboard .dash_table{
+    margin: 0 1em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--white-color);
+    background-color: #050e2b;
+
+
 }
 
 
 
+th, td {
+    border: 1px groove rgba(104, 101, 101, 0.511); /* Set the border to 1px solid black */
+    padding:.5em; /* Add some padding for better appearance */
+    text-align: center; /* Adjust text alignment as needed */
+}
+
+td{
+    height: 2em;
+}
+
+thead th{
+    font-weight: var(--fw4);
+    text-transform: uppercase;
+    background-color: #252526;
+}
+
+td:nth-child(2) {
+color: rgb(102, 102, 255);
+}
 
 
+/* its for dynamic purpose so i just ignore it */
+.orange{
+    color:  orange;
+}
 
+.red{
+    color: red;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.blue{
+    color: blue;
+}
 
