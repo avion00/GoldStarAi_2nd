@@ -104,6 +104,7 @@ h4{
 i{
     color: var(--primary-color);
 }
+/* some useable css */
 
 
 
@@ -333,6 +334,10 @@ img{
 }
 
 
+
+
+/* ===========this is scroll bar css============ */
+
 ::-webkit-scrollbar {
   width: .5em;
 }
@@ -360,6 +365,7 @@ img{
 
 /* body page */
 
+/* headaer or we can say first row start */
 .dashboard .header{
     display: flex;
     justify-content: space-between;
@@ -457,6 +463,11 @@ input[type="search"]::placeholder{
     opacity: .4;
 }
 
+/* headaer or we can say first row ends */
+
+
+
+/* user hr or we can say second row start */
 .user_hr{
     display: flex;
     justify-content: space-between;
@@ -542,6 +553,12 @@ input[type="search"]::placeholder{
     font-weight: var(--fw5);
 }
 
+
+/* user hr or we can say second row ends */
+
+
+/* list_row or we can say third row start */
+
 .dashboard .list_row {
     background-color: #19074c;
     color: var(--white-color);
@@ -588,7 +605,11 @@ input[type="search"]::placeholder{
     border-radius: 5px;
     background-color: #33246ecb;
 }
+/* list_row or we can say third row ends */
 
+
+
+/* leads object or we can say fourth row start */
 .dashboard .leads_object{
     display: flex;
     flex-direction: row;
@@ -659,6 +680,7 @@ input[type="search"]::placeholder{
     padding: 0 .8em;
     font-size: small;
     font-family: inherit;
+    text-align: center;
 
 }
 
@@ -705,11 +727,164 @@ input[type="search"]::placeholder{
 
 .dashboard .leads_object .filter .srch .advanced label{
     cursor: pointer;
+    margin: 0 1em;
 }
 
 
-/* table  */
+/* advaced search which is absolute in position and droup */
+.dashboard .leads_object .filter{
+    position: relative;
+}
 
+.dashboard .leads_object .advanced_search{
+    position: absolute;
+    width: 415px;
+    top: 4.5em;
+    right: 0;
+    background-color: #e7e0d6;
+    border-radius: 10px;
+    padding: 1em;
+    text-transform: capitalize;
+}
+
+.advanced_search .ad_search{
+    margin: 0 .5em;
+
+}
+.advanced_search .ad_search .title{
+    font-size: 20px;
+    color: var(--dark-color);
+    font-weight: var(--fw5);
+    border-bottom: 1px groove #d2d1d1b0;
+    line-height: 1;
+    margin-bottom: 1em;
+    padding-bottom: .1em;
+}
+
+
+.advanced_search .ad_search :where(.search_by, .date_options, .by_date){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.advanced_search .ad_search :where(.search_by, .date_options, .by_date, .by_period){
+    margin: .5em 0;
+}
+
+.advanced_search .ad_search :where(.search_by, .date_options, .by_date) .select_input{
+    position: relative;
+}
+
+.advanced_search .ad_search :where(.search_by, .date_options, .by_date) .select_input img{
+    position: absolute;
+    left: 1.3em;
+    top: .5em;
+    rotate: 90deg;
+    transform: scale(2.2);
+}
+
+.advanced_search .ad_search :where(.search_by, .date_options, .by_date, .by_period) label{
+    color: var(--dark-color);
+    font-weight: var(--fw5);
+}
+.advanced_search .ad_search :where(.search_by, .date_options, .by_date){
+    margin: 1em 0;
+}
+
+.advanced_search .ad_search :where(.search_by, .date_options, .by_date) input{
+    padding: .5em .5em .5em 2.5em;
+    outline: 0;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    margin: 0 .5em;
+    width: 90%;
+    font-family: inherit;
+    font-size: small;
+}
+
+.advanced_search .ad_search :where(.search_by, .date_options, .by_date) input::placeholder{
+    opacity: .8;
+    font-family: inherit;
+    font-size: small;
+}
+
+.advanced_search .by_period{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.advanced_search .by_period .date label{
+    text-transform: uppercase;
+    font-size: smaller;
+    font-weight: var(--fw3);
+}
+
+.advanced_search .by_period .date input{
+    width: 25px;
+    height: 20px;
+    padding: .2em;
+    font-size: 11px;
+    border: 1px solid rgb(78, 78, 222);
+    text-align: center;
+}
+.advanced_search .by_period .date .year{
+    width: 30px;
+}
+
+.advanced_search .by_period .date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap:.5em;
+}
+
+.peroid{
+    display: flex;
+    flex: 1;
+}
+
+
+.advanced_search .by_period .date img{
+    opacity: 8;
+}
+
+
+.advanced_search .search_btn{
+    margin-top: 2em;
+    display: flex;
+    justify-content: right;
+}
+.advanced_search .search_btn input{
+    background-color: #122eacce;
+    color: var(--white-color);
+    text-transform: uppercase;
+    margin: 0;
+    transition: .5s;
+}
+
+.advanced_search .search_btn input:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-dark-color);
+}
+
+.advanced_search .search_btn input:active{
+    background-color: #122eacce;
+    color: var(--white-color);
+}
+
+:where(.initial_date, .final_date, .ad_search) label::after{
+    content: ':';
+    margin: 0 .1em;
+}
+
+
+/* leads_object or we can say fourth row ends */
+
+
+/* dash table or we can say fifth row start*/
 .dashboard .dash_table{
     margin: 0 1em;
 }
@@ -722,8 +897,6 @@ table {
 
 
 }
-
-
 
 th, td {
     border: 1px groove rgba(104, 101, 101, 0.511); /* Set the border to 1px solid black */
@@ -744,6 +917,7 @@ thead th{
 td:nth-child(2) {
 color: rgb(102, 102, 255);
 }
+/* dash table or we can say fifth row ends*/
 
 
 /* its for dynamic purpose so i just ignore it */
