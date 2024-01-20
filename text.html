@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Custom CSS for radio input */
+    input[type="radio"] {
+      /* Hide the default radio button */
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      /* Define your custom styles */
+      width: 20px; /* Set the width of the custom radio button */
+      height: 20px; /* Set the height of the custom radio button */
+      border-radius: 50%; /* Set the border radius to make it a circle */
+      border: 2px solid #3498db; /* Set the border color and width */
+      outline: none; /* Remove the default focus outline */
+      cursor: pointer; /* Change the cursor on hover */
+      position: relative; /* Position relative for the dot */
+    }
+
+    /* Custom styles for checked radio */
+    input[type="radio"]:checked {
+      background-color: #fff; /* Set the background color when radio is checked */
+      border: 1px solid #3498db;
+      border-radius: 3px; /* Set the border color when radio is checked */
+    }
+
+    /* Style the dot inside the checked radio */
+    input[type="radio"]:checked::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; /* Set the width of the dot */
+      height: 10px; /* Set the height of the dot */
+      border-radius: 50%; /* Make it a circle */
+      background-color: #000; /* Set the color of the dot */
+    }
+
+    /* Add additional styles as needed */
+  </style>
+</head>
+<body>
+
+  <!-- Your radio input -->
+  <label>
+    <input type="radio" name="yourRadioGroup" id="radio1">
+    Option 1
+  </label>
+
+  <label>
+    <input type="radio" name="yourRadioGroup" id="radio2">
+    Option 2
+  </label>
+
+</body>
+</html>

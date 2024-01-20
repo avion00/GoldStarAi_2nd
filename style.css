@@ -880,6 +880,145 @@ input[type="search"]::placeholder{
     margin: 0 .1em;
 }
 
+/* drop absolute are ends */
+
+/* visiable fields absolute start */
+.leads_object .control .view_icon{
+    position: relative;
+}
+
+.close_fields{
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    width: 20px;
+
+
+}
+
+.close_fields img{
+    width: 100%;
+}
+
+
+.leads_object .control .view_icon .fields{
+    position: absolute;
+    background-color: #272749;
+    width: 280px;
+    height: 520px;
+    overflow-y: scroll;
+    z-index: 1;
+    top: -3px;
+    left: 0px;
+    padding: .5em;
+    border-radius: 5px;
+    border: 1px groove rgb(94, 97, 128);
+}
+
+.leads_object .control .view_icon .fields .fields_box{
+    display: flex;
+    flex-direction: column;
+    padding: .2em;
+    margin: .3em;
+    padding-right: 3.5em;
+}
+
+.fields .fields_box :where(.fields_head_item, .fields_body_item) .field_list{
+    display: flex;
+    flex-direction: row;
+    gap: .8em;
+}
+
+.fields .fields_box :where(.fields_head_item, .fields_body_item) .title{
+    text-transform: capitalize;
+    font-size: small;
+    font-family: inherit;
+    font-weight: var(--fw4);
+    display: flex;
+    align-items: center;
+}
+
+.fields .fields_box .fields_head_item{
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+.fields .fields_box  .fields_head_item  .field_list{
+    padding: .2em;
+    display: flex;
+    align-items: center;
+}
+.fields_head_item .title label{
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: var(--fw5);
+}
+
+
+.fields .fields_box  .fields_body_item  .field_list{
+    margin: .5em 0;
+    padding: 0 .5em;
+}
+.fields .fields_box  .fields_body_item  .field_list .tick{
+    display: flex;
+    align-items: center;
+}
+
+.fields .fields_box  .fields_body_item  .field_list img{
+    width: 14px;
+    transform: scale(2);
+    rotate: 90deg;
+}
+
+
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 15px; 
+    height: 15px; 
+    border-radius: 5px; 
+    border: 1px solid var(--dark-color); 
+    outline: none; 
+    cursor: pointer; 
+    position: relative; 
+    background-color: var(--white-color);
+}
+
+input[type="radio"]:checked {
+    background-color: var(--white-color);
+}
+
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+    background-color: var(--dark-color);
+}
+
+
+.fields .fields_box .fields_head_item .view_icon{
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.sub_list{
+    margin: 0 1.5em ;
+}
+
+
+/* visiable fields absolute ends */
+
+
 
 /* leads_object or we can say fourth row ends */
 
@@ -912,6 +1051,9 @@ thead th{
     font-weight: var(--fw4);
     text-transform: uppercase;
     background-color: #252526;
+}
+tbody{
+    overflow-x: hidden;
 }
 
 td:nth-child(2) {
