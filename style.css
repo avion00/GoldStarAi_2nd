@@ -902,7 +902,13 @@ input[type="search"]::placeholder{
 
 .leads_object .control .view_icon .fields{
     position: absolute;
-    background-color: #272749;
+    /* background-color: #272749; */
+    background: linear-gradient(
+        135deg,
+            #272749 50%,
+            #3a3a65,
+            #53536e
+        );
     width: 280px;
     height: 520px;
     overflow-y: scroll;
