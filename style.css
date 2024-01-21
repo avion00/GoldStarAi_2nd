@@ -210,6 +210,11 @@ i{
 .nav-links .list-item li  a span{
     margin: .3em .8em;  
     font-size: .9em;
+    transition: .5s;
+}
+
+.nav-links .list-item li  a:hover span{
+    opacity: .5;
 }
 
 .nav-links .list-item li a{
@@ -256,6 +261,8 @@ i{
 .container .left-page .nav-links .log .logout i{
     padding-right: .3em;
 }
+
+
 /* end of nav-page */
 
 
