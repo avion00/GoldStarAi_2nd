@@ -1015,6 +1015,23 @@ input[type="radio"]:checked::before {
 }
 
 
+.visiable_fields{
+    display: none;
+}
+
+
+.visiable_fields.active{
+    display: block;
+}
+
+.advanced_search{
+    display: none;
+}
+
+.advanced_search.active{
+    display: block;
+}
+
 /* visiable fields absolute ends */
 
 

@@ -1,22 +1,43 @@
-const optionMenus = document.querySelectorAll(".select-menu");
+document.addEventListener("DOMContentLoaded", () => {
+  // this is for view icons field
+  const viewIcons = document.querySelectorAll(".visibleIconField");
 
-optionMenus.forEach((optionMenu) => {
-  const selectBtn = optionMenu.querySelector(".select-btn");
-  const sBtn_text = selectBtn.querySelector(".sBtn-text");
-  const options = optionMenu.querySelectorAll(".options .option");
+  viewIcons.forEach((viewIcon) => {
+    const visiableFields = viewIcon.querySelector(".visiable_fields");
+    const visiableIcon = viewIcon.querySelector(".visiable_icon");
+    const closeFields = viewIcon.querySelector(".close_fields");
 
-  selectBtn.addEventListener("click", () => {
-    optionMenu.classList.toggle("active");
-    console.log("Button clicked");
+    visiableIcon.addEventListener("click", (event) => {
+      event.stopPropagation();
+      visiableFields.classList.toggle("active");
+    });
+
+    closeFields.addEventListener("click", () => {
+      visiableFields.classList.remove("active");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!viewIcon.contains(event.target)) {
+        visiableFields.classList.remove("active");
+      }
+    });
   });
 
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      let selectedOption = option.querySelector(".option-text").innerText;
-      sBtn_text.innerText = selectedOption;
-      console.log(selectedOption);
-      optionMenu.classList.remove("active");
-      console.log("Option clicked");
+  // this is for advanced search field
+  const filter = document.querySelectorAll(".filter");
+  filter.forEach((filter) => {
+    const advancedBtns = filter.querySelector(".advancedBtns");
+    const advancedSearch = filter.querySelector(".advanced_search");
+
+    advancedBtns.addEventListener("click", (event) => {
+      event.stopPropagation();
+      advancedSearch.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!filter.contains(event.target)) {
+        advancedSearch.classList.remove("active");
+      }
     });
   });
 });
